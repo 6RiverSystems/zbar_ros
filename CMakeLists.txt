@@ -16,6 +16,7 @@ include_directories(
 
 add_library(barcode_reader_nodelet src/barcode_reader_nodelet.cpp)
 target_link_libraries(barcode_reader_nodelet zbar ${catkin_LIBRARIES})
+add_dependencies(barcode_reader_nodelet ${barcode_reader_nodelet_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 add_executable(barcode_reader_node src/barcode_reader_node.cpp)
 target_link_libraries(barcode_reader_node ${catkin_LIBRARIES})
